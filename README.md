@@ -1,1 +1,3 @@
 # hellday
+
+Idle farm prototype

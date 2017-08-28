@@ -5,6 +5,8 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public int totalHp = 100;
     public int currentHp;
+    public GameObject enemyToRemove;
+    public GameObject itemPrefab;
 
     // Use this for initialization
     void Start()
@@ -20,6 +22,11 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Damage(playerPosition.GetComponent<PlayerBehaviour>().dps);    
         }
+        if (currentHp <= 0)
+        {
+            Destroy(enemyToRemove);
+            
+        }
         
     }
 
@@ -28,5 +35,12 @@ public class EnemyBehaviour : MonoBehaviour
         currentHp -= amount;
         var i = (float) amount / 100;
         GetComponent<Image>().fillAmount -= i;
+    }
+
+    private void OnDestroy()
+    {
+        var positionX = transform.position.x + Random.Range(-1, 1);
+        var positionY = transform.position.y + Random.Range(-1, 1);
+        Instantiate(itemPrefab, new Vector2(positionX, positionY), Quaternion.identity);
     }
 }

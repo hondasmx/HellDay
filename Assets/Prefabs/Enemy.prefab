@@ -232,8 +232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4d114be99846545aba68c27e71b74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  amount: 20
+  totalHp: 100
+  currentHp: 0
+  enemyToRemove: {fileID: 1651300354192410}
+  itemPrefab: {fileID: 1499523218328670, guid: 135a09796fe53214daf15c4a18bb8eb6, type: 2}
 --- !u!114 &114833760498184982
 MonoBehaviour:
   m_ObjectHideFlags: 1

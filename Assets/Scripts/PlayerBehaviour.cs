@@ -4,10 +4,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
 
 	public int dps = 1;
-	void Start () {
-		
-	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		var rb = GetComponent<Rigidbody2D>();

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ItemNamesAndPickup : MonoBehaviour
 {
     public Text itemNameText;
-    private int goldAmount;
+    private int goldAmount = 123;
     private int foodAmount;
     private string itemName;
 
@@ -18,7 +18,7 @@ public class ItemNamesAndPickup : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Resources.AddGold(goldAmount);
+        Resources.AddResource(goldAmount, Resources.ResourceType.gold);
         StartCoroutine(PickupText.ShowMessage(itemName));
         StartCoroutine(Destroy());
 

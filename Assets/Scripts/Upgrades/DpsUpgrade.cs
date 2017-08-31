@@ -21,7 +21,7 @@ public class DpsUpgrade : MonoBehaviour
 	{
 		if (isEnoughResourcesForLevelUp())
 		{
-			Resources.AddGold(-levelUpCost[currentLevel]);
+			Resources.AddResource(-levelUpCost[currentLevel], Resources.ResourceType.gold);
 			currentLevel++;
 			PlayerStats.SetDps(levelValues[currentLevel]);
 			UpdateText();
@@ -30,7 +30,7 @@ public class DpsUpgrade : MonoBehaviour
 
 	private bool isEnoughResourcesForLevelUp()
 	{
-		return levelUpCost[currentLevel] <= Resources.goldAmount;
+		return levelUpCost[currentLevel] <= Resources.resources[Resources.ResourceType.gold];
 	}
 
 	private void UpdateText()

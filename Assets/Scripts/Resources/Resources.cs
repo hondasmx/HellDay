@@ -10,18 +10,18 @@ public class Resources : MonoBehaviour
 
     public static Dictionary<ResourceType, string> names = new Dictionary<ResourceType, string>
     {
-        {ResourceType.food, "Еда"},
-        {ResourceType.gold, "Золото"},
-        {ResourceType.horn, "Рог"},
-        {ResourceType.horn_sword, "Меч из рогов"},
-        {ResourceType.horn_wand, "Жезл из рогов"},
-        {ResourceType.infinity_horn_sword, "Жезл из рогов бесконечности"},
-        {ResourceType.leprechaun_feed, "Еда для лепрекона"},
-        {ResourceType.magic_fire, "Магический огонь"},
-        {ResourceType.magic_wand, "Магический жезл"},
-        {ResourceType.meat, "Мясо"},
-        {ResourceType.meat_grill, "Жареное мясо"},
-        {ResourceType.sulfur, "Сульфур"}
+        {ResourceType.food, "Food"},
+        {ResourceType.gold, "Gold"},
+        {ResourceType.horn, "Horn"},
+        {ResourceType.horn_sword, "Horn sword"},
+        {ResourceType.horn_wand, "Horn wand"},
+        {ResourceType.infinity_horn_sword, "Infinity horn sword"},
+        {ResourceType.leprechaun_feed, "Leprechaun feed"},
+        {ResourceType.magic_fire, "Magic fire"},
+        {ResourceType.magic_wand, "Magic wand"},
+        {ResourceType.meat, "Meat"},
+        {ResourceType.meat_grill, "Meat grill"},
+        {ResourceType.sulfur, "Sulfur"}
     };
 
 
@@ -69,7 +69,7 @@ public class Resources : MonoBehaviour
     {
         foreach (ResourceType type in Enum.GetValues(typeof(ResourceType)))
         {
-            resources[type] = 1000;
+            resources[type] = 10;
         }
         UpdateResources();
     }

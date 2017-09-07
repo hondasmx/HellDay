@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MagicHouse: MonoBehaviour
+public class MagicHouse : MonoBehaviour
 {
     public List<Recipe> recipeList = new List<Recipe>();
     public Text infinityHornSwordButtonText;
     public GameObject infinityHornSwordButton;
-    private Recipe infinityHornSwordRecipe;
+    public Recipe infinityHornSwordRecipe;
 
     public Text magicWandButtonText;
     public GameObject magicWandButton;
-    private Recipe magicWandRecipe;
+    public Recipe magicWandRecipe;
 
 
     private void Start()

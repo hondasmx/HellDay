@@ -7,7 +7,7 @@ public class DemonYard : MonoBehaviour
     public List<Recipe> recipeList = new List<Recipe>();
     public Text hornButtonText;
     public GameObject hornButton;
-    private Recipe hornRecipe;
+    public Recipe hornRecipe;
 
     private void Start()
     {

@@ -9,8 +9,8 @@ public class Factory : MonoBehaviour
     public GameObject hornSwordButton;
     public Text hornWandButtonText;
     public GameObject hornWandButton;
-    private Recipe hornSwordRecipe;
-    private Recipe hornWandRecipe;
+    public Recipe hornSwordRecipe;
+    public Recipe hornWandRecipe;
 
     private void Start()
     {

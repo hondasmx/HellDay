@@ -8,9 +8,8 @@ public class GrillHouse : MonoBehaviour
     public List<Recipe> recipeList = new List<Recipe>();
     public Text leprechaunFeedButtonText, meatGrillButtonText;
     public GameObject leprechaunFeedButton, meatGrillButton;
-    private Recipe leprechaunFeedRecipe;
-    private Recipe meatGrillRecipe;
-    private Recipe buildingState;
+    public Recipe leprechaunFeedRecipe;
+    public Recipe meatGrillRecipe;
 
     private void Start()
     {

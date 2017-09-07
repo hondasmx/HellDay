@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224456313280454342}
   - component: {fileID: 222424672864942848}
   - component: {fileID: 114446041488579430}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: HpBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 223908051046421038}
   - component: {fileID: 114261837383149058}
   - component: {fileID: 114562698400282668}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 222158881439203802}
   - component: {fileID: 114764461573101910}
   - component: {fileID: 114019291346557872}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: HpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e37c6c29aa442cdb4e27adc971f204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114261837383149058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,7 +196,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -2144907439
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &224175084409925062

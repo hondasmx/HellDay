@@ -7,7 +7,7 @@ public class LeprechaunYard : MonoBehaviour
     public List<Recipe> recipeList = new List<Recipe>();
     public Text magicFireButtonText;
     public GameObject magicFireButton;
-    private Recipe magicFireRecipe;
+    public Recipe magicFireRecipe;
 
     private void Start()
     {

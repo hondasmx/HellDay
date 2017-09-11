@@ -8,7 +8,8 @@ public class Resources : MonoBehaviour
     public static string resourcesText;
     public static Dictionary<ResourceType, int> resources = new Dictionary<ResourceType, int>();
 
-    public static Dictionary<ResourceType, string> names = new Dictionary<ResourceType, string>
+    //Название ресурсов как они будут отображаться в интерфейсе
+    private static readonly Dictionary<ResourceType, string> names = new Dictionary<ResourceType, string>
     {
         {ResourceType.food, "Food"},
         {ResourceType.gold, "Gold"},
@@ -22,6 +23,23 @@ public class Resources : MonoBehaviour
         {ResourceType.meat, "Meat"},
         {ResourceType.meat_grill, "Meat grill"},
         {ResourceType.sulfur, "Sulfur"}
+    };
+    
+    //Стоимость продажи ресурсов на рынке
+    private static readonly Dictionary<ResourceType, int> sellValues = new Dictionary<ResourceType, int>
+    {
+        {ResourceType.food, 2},
+        {ResourceType.gold, 1},
+        {ResourceType.horn, 3},
+        {ResourceType.horn_sword, 4},
+        {ResourceType.horn_wand, 5},
+        {ResourceType.infinity_horn_sword, 6},
+        {ResourceType.leprechaun_feed, 7},
+        {ResourceType.magic_fire, 8},
+        {ResourceType.magic_wand, 9},
+        {ResourceType.meat, 10},
+        {ResourceType.meat_grill, 11},
+        {ResourceType.sulfur, 12}
     };
 
 
@@ -46,7 +64,17 @@ public class Resources : MonoBehaviour
         return names[type];
     }
 
-    private void Start()
+    public static int GetResourceAmount(ResourceType type)
+    {
+        return resources[type];
+    }
+
+    public static int GetSellValue(ResourceType type)
+    {
+        return sellValues[type];
+    }
+
+    private void Awake()
     {
         InitResourcesDictionary();
         UpdateText();

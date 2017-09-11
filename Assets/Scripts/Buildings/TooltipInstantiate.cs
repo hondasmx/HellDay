@@ -11,7 +11,6 @@ public class TooltipInstantiate : MonoBehaviour
     private GameObject recipe;
     private Text tooltipText;
 
-
     private void OnMouseEnter()
     {
         tooltipPrefabCreated = Instantiate(tooltipPrefab, tooltipPosition, Quaternion.identity);
@@ -72,7 +71,7 @@ public class TooltipInstantiate : MonoBehaviour
         if (_recipe == null) return;
         foreach (var keyValuePair in _recipe.resources)
         {
-            var resourceName = Resources.names[keyValuePair.Key];
+            var resourceName = Resources.GetName(keyValuePair.Key);
             var resourceCount = keyValuePair.Value;
             var resourcesInBank = Resources.resources[keyValuePair.Key];
             tooltipText.text += resourceName + " : " + resourceCount + "/" + resourcesInBank + "\n";

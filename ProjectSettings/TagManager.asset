@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MarketItem
+  - Market
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Market
   - 
   - 
   - 
@@ -49,4 +51,10 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 3533812509
+    locked: 0
+  - name: Market
+    uniqueID: 1301441447
+    locked: 0
+  - name: MarketItem
+    uniqueID: 2747381419
     locked: 0

@@ -27,7 +27,7 @@ public class Recipe
         this.button = button;
         this.resources = resources;
         this.buttonText = buttonText;
-        this.buttonText.text = Resources.names[resourceType];
+        this.buttonText.text = Resources.GetName(resourceType);
         currentStage = Stage.Idle;
     }
 
@@ -54,7 +54,7 @@ public class Recipe
 
                 //запускаем прогрессбар
                 var currentTimer = time;
-                button.GetComponent<Button>().interactable = false;
+                button.GetComponent<UnityEngine.UI.Button>().interactable = false;
                 while (button.GetComponent<Image>().fillAmount < 1.0f)
                 {
                     buttonText.text = currentTimer.ToString();
@@ -86,10 +86,10 @@ public class Recipe
         switch (currentStage)
         {
             case Stage.Idle:
-                buttonText.text = Resources.names[resourceType];
+                buttonText.text = Resources.GetName(resourceType);
                 if (isEnoughResources(resources))
                 {
-                    button.GetComponent<Button>().interactable = true;
+                    button.GetComponent<UnityEngine.UI.Button>().interactable = true;
                     button.GetComponent<Image>().color = Color.green;
                     button.GetComponent<Image>().fillAmount = 0;
                 }
@@ -99,17 +99,17 @@ public class Recipe
                 }
                 break;
             case Stage.Working:
-                button.GetComponent<Button>().interactable = false;
+                button.GetComponent<UnityEngine.UI.Button>().interactable = false;
                 break;
             case Stage.Done:
                 buttonText.text = "Ready!";
-                button.GetComponent<Button>().interactable = true;
+                button.GetComponent<UnityEngine.UI.Button>().interactable = true;
                 break;
             case Stage.NotEnoughResources:
-                buttonText.text = Resources.names[resourceType];
+                buttonText.text = Resources.GetName(resourceType);
                 if (!isEnoughResources(resources))
                 {
-                    button.GetComponent<Button>().interactable = false;
+                    button.GetComponent<UnityEngine.UI.Button>().interactable = false;
                     button.GetComponent<Image>().color = Color.red;
                     button.GetComponent<Image>().fillAmount = 1.0f;
                 }

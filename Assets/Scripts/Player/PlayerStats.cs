@@ -3,7 +3,7 @@
 public class PlayerStats : MonoBehaviour
 {
 
-	public static float dps = 30;
+	public static float dps = 50;
 	public static float currentHp = 100;
 	public static float totalHp = 100;
 	public static float hpRegenPerSecond = 3;
@@ -13,6 +13,11 @@ public class PlayerStats : MonoBehaviour
 		if (currentHp >= totalHp)
 		{
 			currentHp = totalHp;
+		}
+		if (currentHp <= 0)
+		{
+			transform.position = Vector3.zero;
+			PlayerMovement.clickedEnemy = null;
 		}
 	}
 
@@ -25,4 +30,10 @@ public class PlayerStats : MonoBehaviour
 	{
 		totalHp = amount;
 	}
+
+	public static bool IsHealing()
+	{
+		return GameObject.Find("Player").transform.position == Vector3.zero;
+	}
+	
 }

@@ -2,23 +2,11 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
-	
-	
     public static GameObject clickedEnemy;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     void FixedUpdate()
     {
-        var moveHorizontal = Input.GetAxis("Horizontal");
-        var moveVertical = Input.GetAxis("Vertical");
-        var movement = new Vector2(moveHorizontal, moveVertical);
-        rb.velocity = movement * 3;
         if (clickedEnemy != null)
         {
             MoveToEnemy(clickedEnemy);
@@ -28,8 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveToEnemy(GameObject enemy)
     {
+        //Если не отрегенился или уже в зоне врага - заканчиваем движение (или не начинаем)
+        if (PlayerStats.currentHp < PlayerStats.totalHp & PlayerStats.IsHealing()) return;
         if (isInDistance(enemy)) return;
-        var movement = new Vector2(enemy.transform.position.x - transform.position.x , enemy.transform.position.y - transform.position.y);
+        
+        var movement = new Vector2(enemy.transform.position.x - transform.position.x,
+            enemy.transform.position.y - transform.position.y);
         transform.Translate(movement * Time.deltaTime);
     }
 
@@ -38,6 +30,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector2.Distance(enemy.transform.position, transform.position) <= 0.9f;
     }
-    
-    
 }

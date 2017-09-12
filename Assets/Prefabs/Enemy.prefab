@@ -189,9 +189,11 @@ MonoBehaviour:
   totalHp: 100
   dps: 10
   currentHp: 0
-  enemyToRemove: {fileID: 1683804624333130}
-  itemPrefab: {fileID: 1499523218328670, guid: 135a09796fe53214daf15c4a18bb8eb6, type: 2}
+  itemPrefabs:
+  - {fileID: 1054238681242064, guid: c57eb08e9bbfd4d8a8ebbeef86f052df, type: 2}
+  - {fileID: 1499523218328670, guid: 135a09796fe53214daf15c4a18bb8eb6, type: 2}
   enemy: {fileID: 1683804624333130}
+  isAlive: 1
 --- !u!114 &114641037674146346
 MonoBehaviour:
   m_ObjectHideFlags: 1
